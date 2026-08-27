@@ -49,9 +49,15 @@
   nav.top .brand {
     font-weight: 700; color: var(--ink); font-size: 15px;
   }
-  nav.top .links { display: flex; gap: 22px; font-size: 14px; }
-  nav.top .links a { color: var(--body); }
+  nav.top .links {
+    display: flex; gap: 22px; font-size: 14px;
+    flex-wrap: wrap; justify-content: flex-end;
+  }
+  nav.top .links a { color: var(--body); white-space: nowrap; }
   nav.top .links a:hover { color: var(--accent); text-decoration: none; }
+  @media (max-width: 760px) {
+    nav.top .links { gap: 14px; }
+  }
   @media (max-width: 560px) {
     nav.top .links { display: none; }
   }
@@ -262,6 +268,7 @@
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
       <a href="Swathisree_Sreepada_CV_ATS.pdf" download>Download CV</a>
+      <a href="Swathisree_Sreepada_CoverLetter_ATS.pdf" download>Cover Letter</a>
     </div>
   </div>
 </nav>
@@ -287,6 +294,9 @@
     <div class="cta-row">
       <a class="btn btn-primary" href="Swathisree_Sreepada_CV_ATS.pdf" download>
         Download CV (PDF)
+      </a>
+      <a class="btn btn-outline" href="Swathisree_Sreepada_CoverLetter_ATS.pdf" download>
+        Cover Letter (PDF)
       </a>
       <a class="btn btn-outline" href="mailto:swathisreepada84@gmail.com">
         Get in touch

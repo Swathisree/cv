@@ -9,6 +9,7 @@ cv_website/
 ├── index.html              ← the site (self-contained, all CSS inline)
 ├── photo.jpg               ← profile photo
 ├── Swathisree_Sreepada_CV_ATS.pdf  ← downloadable CV (ATS version)
+├── Swathisree_Sreepada_CoverLetter_ATS.pdf  ← downloadable cover letter (ATS version)
 ├── .nojekyll               ← tells GitHub Pages to skip Jekyll processing
 └── README.md               ← this file
 ```
@@ -68,8 +69,10 @@ Use this if you want to keep the personal `github.io` URL for something else.
 ## Editing the site later
 
 Everything is in `index.html`. To change text, just edit the file. To swap the CV
-PDF, replace `Swathisree_Sreepada_CV_ATS.pdf` with a new file of the **same name** (or
-edit the two `href="..."` links in `index.html`). Then:
+or cover letter PDF, replace `Swathisree_Sreepada_CV_ATS.pdf` /
+`Swathisree_Sreepada_CoverLetter_ATS.pdf` with a new file of the **same name** (or
+edit the `href="..."` links in `index.html` — each PDF is linked twice, once in the
+nav bar and once in the hero button row). Then:
 
 ```bash
 git add .
