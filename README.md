@@ -8,7 +8,7 @@ A clean, minimal, single-page CV website ready to host free on **GitHub Pages**.
 cv_website/
 ├── index.html              ← the site (self-contained, all CSS inline)
 ├── photo.jpg               ← profile photo
-├── Swathisree_Sreepada_CV.pdf  ← downloadable CV
+├── Swathisree_Sreepada_CV_ATS.pdf  ← downloadable CV (ATS version)
 ├── .nojekyll               ← tells GitHub Pages to skip Jekyll processing
 └── README.md               ← this file
 ```
@@ -68,7 +68,7 @@ Use this if you want to keep the personal `github.io` URL for something else.
 ## Editing the site later
 
 Everything is in `index.html`. To change text, just edit the file. To swap the CV
-PDF, replace `Swathisree_Sreepada_CV.pdf` with a new file of the **same name** (or
+PDF, replace `Swathisree_Sreepada_CV_ATS.pdf` with a new file of the **same name** (or
 edit the two `href="..."` links in `index.html`). Then:
 
 ```bash
