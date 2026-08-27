@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swathisree Sreepada — Data Scientist</title>
+<meta name="description" content="Swathisree Sreepada — Data Scientist based in the Paris region. 5+ years shipping production computer vision and ML systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #0d9488;
+    --accent-dark: #0f766e;
+    --accent-soft: #ccfbf1;
+    --ink: #0f172a;
+    --body: #334155;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --bg: #ffffff;
+    --bg-soft: #f8fafc;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--body);
+    background: var(--bg);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-dark); text-decoration: none; transition: color .15s ease; }
+  a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav.top {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: saturate(180%) blur(8px);
+    -webkit-backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.top .inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 0;
+  }
+  nav.top .brand {
+    font-weight: 700; color: var(--ink); font-size: 15px;
+  }
+  nav.top .links { display: flex; gap: 22px; font-size: 14px; }
+  nav.top .links a { color: var(--body); }
+  nav.top .links a:hover { color: var(--accent); text-decoration: none; }
+  @media (max-width: 560px) {
+    nav.top .links { display: none; }
+  }
+
+  /* HERO */
+  header.hero { padding: 64px 0 40px 0; }
+  .hero-row { display: flex; gap: 32px; align-items: flex-start; }
+  .hero-photo {
+    width: 120px; height: 120px; border-radius: 50%;
+    object-fit: cover; flex-shrink: 0;
+    border: 3px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--line), 0 8px 20px rgba(15, 23, 42, 0.06);
+  }
+  .hero-text h1 {
+    font-size: 34px; font-weight: 700; color: var(--ink);
+    letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 6px;
+  }
+  .hero-text .role {
+    font-size: 16px; color: var(--accent-dark); font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .hero-text .location {
+    font-size: 14px; color: var(--muted); margin-bottom: 20px;
+  }
+  .hero-summary {
+    margin-top: 28px; font-size: 16.5px; color: var(--body);
+    line-height: 1.7;
+  }
+  .cta-row {
+    display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 8px;
+    font-size: 14.5px; font-weight: 500;
+    transition: all .15s ease;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    background: var(--accent); color: white;
+  }
+  .btn-primary:hover {
+    background: var(--accent-dark); color: white; text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+  }
+  .btn-outline {
+    background: transparent; color: var(--body);
+    border: 1px solid var(--line);
+  }
+  .btn-outline:hover {
+    border-color: var(--accent); color: var(--accent-dark);
+    text-decoration: none;
+  }
+  @media (max-width: 560px) {
+    .hero-row { flex-direction: column; gap: 20px; }
+    .hero-photo { width: 96px; height: 96px; }
+    .hero-text h1 { font-size: 28px; }
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+  }
+  h2.section-title {
+    font-size: 12px; font-weight: 600; color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.14em;
+    margin-bottom: 28px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  /* EXPERIENCE / EDUCATION items */
+  .item { margin-bottom: 32px; }
+  .item:last-child { margin-bottom: 0; }
+  .item-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 16px; margin-bottom: 4px; flex-wrap: wrap;
+  }
+  .item-title { font-size: 17px; font-weight: 600; color: var(--ink); }
+  .item-dates {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 13px; color: var(--muted); white-space: nowrap;
+  }
+  .item-sub {
+    font-size: 14.5px; color: var(--accent-dark);
+    margin-bottom: 12px; font-weight: 500;
+  }
+  .item p, .item ul { font-size: 15px; line-height: 1.65; }
+  .item ul { list-style: none; padding-left: 0; }
+  .item ul li {
+    position: relative; padding-left: 18px; margin-bottom: 7px;
+  }
+  .item ul li::before {
+    content: "";
+    position: absolute; left: 2px; top: 11px;
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--accent);
+  }
+  .item ul li strong { color: var(--ink); font-weight: 600; }
+  .stack-note {
+    margin-top: 10px; font-size: 13px; color: var(--muted);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    line-height: 1.6;
+  }
+  .stack-note strong { color: var(--accent-dark); font-weight: 500; }
+
+  /* SKILLS */
+  .skill-group { margin-bottom: 18px; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-label {
+    font-size: 13px; color: var(--muted); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    display: inline-block;
+    padding: 4px 11px;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  .chip.accent {
+    background: var(--accent-soft);
+    border-color: transparent;
+    color: var(--accent-dark);
+  }
+
+  /* PROJECTS */
+  .project { margin-bottom: 24px; }
+  .project:last-child { margin-bottom: 0; }
+  .project h3 {
+    font-size: 16px; font-weight: 600; color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .project .meta {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 13px; color: var(--muted); margin-bottom: 8px;
+  }
+  .project p { font-size: 15px; }
+
+  /* LANGUAGES / CERTS */
+  .list-line { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  .list-line span { font-size: 15px; color: var(--body); }
+  .list-line strong { color: var(--ink); font-weight: 600; margin-right: 6px; }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .contact-card {
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .contact-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .contact-card .label {
+    font-size: 12px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.05em; margin-bottom: 4px; font-weight: 600;
+  }
+  .contact-card a, .contact-card span {
+    font-size: 14.5px; color: var(--ink); font-weight: 500;
+    word-break: break-word;
+  }
+  .contact-card a:hover { color: var(--accent-dark); }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 0 48px 0;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.7;
+  }
+  footer .disclaimer {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px;
+    margin-top: 6px;
+    color: #94a3b8;
+  }
+
+  /* PRINT */
+  @media print {
+    nav.top, .cta-row, footer .disclaimer { display: none; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="container inner">
+    <div class="brand">Swathisree Sreepada</div>
+    <div class="links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="Swathisree_Sreepada_CV.pdf" download>Download CV</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-row">
+      <img src="photo.jpg" alt="Swathisree Sreepada" class="hero-photo">
+      <div class="hero-text">
+        <h1>Swathisree Sreepada</h1>
+        <div class="role">Data Scientist &middot; Computer Vision &middot; 5+ years</div>
+        <div class="location">Paris region, France</div>
+      </div>
+    </div>
+
+    <p class="hero-summary">
+      Data Scientist with 5+ years of experience shipping ML and deep learning
+      algorithms end-to-end. I balance research and production &mdash; contributing to proofs of
+      concept, reducing technical debt, and running models in production with SLA-driven monitoring
+      and drift detection. Currently upskilling in agentic AI and spec-driven development.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="Swathisree_Sreepada_CV.pdf" download>
+        Download CV (PDF)
+      </a>
+      <a class="btn btn-outline" href="mailto:swathisreepada84@gmail.com">
+        Get in touch
+      </a>
+      <a class="btn btn-outline" href="https://www.linkedin.com/in/swathisree-sreepada" target="_blank" rel="noopener">
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">// experience</h2>
+
+    <div class="item">
+      <div class="item-head">
+        <div class="item-title">Data Scientist</div>
+        <div class="item-dates">Nov 2019 &mdash; Present</div>
+      </div>
+      <div class="item-sub">Homiwoo &middot; Paris, France</div>
+      <ul>
+        <li>Contributed to an internal <strong>Computer Vision Innovation project</strong> covering pair image matching, image segmentation, and multi-class classification and identification, deployed behind a Gradio UI for stakeholder exploration.</li>
+        <li>Shipped a <strong>subsidiary-housing classifier</strong> that infers subsidy type directly from real-estate advertisements, letting investors qualify listings instantly. Owned training, benchmarking, SLA validation and in-production monitoring.</li>
+        <li>Replaced legacy <strong>rule-based expert-system heuristics with ML models</strong>. Ran side-by-side consistency and robustness tests to guarantee behavioural parity before cutover.</li>
+        <li>R&amp;D in computer vision: classification and identification models over real-estate imagery, with Gradio UIs so non-technical stakeholders could probe predictions.</li>
+        <li>Built <strong>cross-source data matching</strong> &mdash; record linkage across heterogeneous external datasets.</li>
+        <li>Owned the <strong>full model lifecycle</strong>: data ingestion, training and validation, MLflow experiment tracking, Dockerised production serving, drift monitoring, SLA validation and closed-loop feedback.</li>
+      </ul>
+      <div class="stack-note"><strong>stack:</strong> Python &middot; Scala &middot; PyTorch &middot; Keras &middot; Scikit-learn &middot; NumPy &middot; Pandas &middot; MLflow &middot; BentoML &middot; Docker &middot; Gradio &middot; Git &middot; Jupyter</div>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <div class="item-title">Senior Software Engineer</div>
+        <div class="item-dates">Sep 2014 &mdash; Nov 2016</div>
+      </div>
+      <div class="item-sub">Capgemini &middot; Bengaluru, India</div>
+      <ul>
+        <li>Delivered web application development and backend programming for enterprise clients.</li>
+        <li>Worked across full-stack Java and JavaScript delivery cycles including design, coding, testing and deployment.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">// projects</h2>
+
+    <div class="project">
+      <h3>Reproducibility of Deep Learning Experiments on GPU</h3>
+      <div class="meta">Laboratoire d'Informatique de Grenoble &middot; Feb &mdash; Jun 2018</div>
+      <p>Evaluated the statistical significance of performance differences across neural architectures and training strategies on CIFAR-10 and CIFAR-100 classification tasks.</p>
+    </div>
+
+    <div class="project">
+      <h3>DNA Binding Site Prediction for Transcription Factors</h3>
+      <div class="meta">ENSIMAG, Grenoble INP &middot; Dec 2018 &mdash; Jan 2019</div>
+      <p>Adapted Logistic Regression and Support Vector Machine classifiers to structural genomic data to predict transcription-factor binding regions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">// skills</h2>
+
+    <div class="skill-group">
+      <div class="skill-label">Machine Learning, Deep Learning &amp; Data Science</div>
+      <div class="chip-row">
+        <span class="chip">PyTorch</span>
+        <span class="chip">Keras</span>
+        <span class="chip">Scikit-learn</span>
+        <span class="chip">TensorFlow</span>
+        <span class="chip">NumPy</span>
+        <span class="chip">Pandas</span>
+        <span class="chip">Statistics</span>
+        <span class="chip">Data Visualization</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Programming Languages</div>
+      <div class="chip-row">
+        <span class="chip">Python</span>
+        <span class="chip">Scala</span>
+        <span class="chip">Java</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">MLOps &amp; Deployment</div>
+      <div class="chip-row">
+        <span class="chip">MLflow</span>
+        <span class="chip">BentoML</span>
+        <span class="chip">Docker</span>
+        <span class="chip">Gradio</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Computer Vision</div>
+      <div class="chip-row">
+        <span class="chip">Image matching</span>
+        <span class="chip">Segmentation</span>
+        <span class="chip">Classification</span>
+        <span class="chip">Image identification</span>
+        <span class="chip">Watermark detection</span>
+        <span class="chip">Vectorization</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Tools &amp; Platforms</div>
+      <div class="chip-row">
+        <span class="chip">Git</span>
+        <span class="chip">Unix</span>
+        <span class="chip">Jupyter</span>
+        <span class="chip">Gerrit</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <div class="skill-label">Currently exploring</div>
+      <div class="chip-row">
+        <span class="chip accent">Agentic AI</span>
+        <span class="chip accent">Spec-driven development</span>
+        <span class="chip accent">LLM applications</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <h2 class="section-title">// education</h2>
+
+    <div class="item">
+      <div class="item-head">
+        <div class="item-title">M.Sc. Informatics</div>
+        <div class="item-dates">Sep 2017 &mdash; Jul 2019</div>
+      </div>
+      <div class="item-sub">ENSIMAG, Grenoble INP &middot; Grenoble, France</div>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <div class="item-title">B.E. Computer Science</div>
+        <div class="item-dates">Jun 2010 &mdash; Jun 2014</div>
+      </div>
+      <div class="item-sub">Visvesvaraya Technological University &middot; Bengaluru, India</div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="container">
+    <h2 class="section-title">// certifications &amp; languages</h2>
+
+    <div class="skill-group">
+      <div class="skill-label">Certifications</div>
+      <ul style="list-style: none; padding: 0;">
+        <li style="padding: 4px 0; font-size: 15px;">Neural Networks &amp; Deep Learning &mdash; Coursera, deeplearning.ai</li>
+        <li style="padding: 4px 0; font-size: 15px;">Microsoft Specialist: HTML5, JavaScript &amp; CSS3</li>
+        <li style="padding: 4px 0; font-size: 15px;">Microsoft Student Partner &mdash; Microsoft India (Dec 2013 &mdash; Jul 2014)</li>
+      </ul>
+    </div>
+
+    <div class="skill-group" style="margin-top: 24px;">
+      <div class="skill-label">Languages</div>
+      <div class="list-line">
+        <span><strong>English</strong> Fluent</span>
+        <span><strong>French</strong> B2, working proficiency</span>
+        <span><strong>Kannada</strong> Native</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">// contact</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="label">Email</div>
+        <a href="mailto:swathisreepada84@gmail.com">swathisreepada84@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="label">Phone</div>
+        <span>(+33) 666-787-058</span>
+      </div>
+      <div class="contact-card">
+        <div class="label">LinkedIn</div>
+        <a href="https://www.linkedin.com/in/swathisree-sreepada" target="_blank" rel="noopener">linkedin.com/in/swathisree-sreepada</a>
+      </div>
+      <div class="contact-card">
+        <div class="label">Location</div>
+        <span>Paris region, France</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    &copy; <span id="year"></span> Swathisree Sreepada. Built with care.
+    <div class="disclaimer">// site drafted with AI assistance</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
