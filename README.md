@@ -6,13 +6,31 @@ A clean, minimal, single-page CV website ready to host free on **GitHub Pages**.
 
 ```
 cv_website/
-├── index.html              ← the site (self-contained, all CSS inline)
-├── photo.jpg               ← profile photo
-├── Swathisree_Sreepada_CV_ATS.pdf  ← downloadable CV (ATS version)
-├── Swathisree_Sreepada_CoverLetter_ATS.pdf  ← downloadable cover letter (ATS version)
+├── index.html              ← the English site (self-contained, all CSS inline)
+├── fr/index.html           ← the French site, served at /cv/fr/
+├── photo.jpg               ← profile photo (shared by both pages)
+├── Swathisree_Sreepada_CV_ATS.pdf              ← downloadable CV, English (ATS)
+├── Swathisree_Sreepada_CoverLetter_ATS.pdf     ← downloadable cover letter, English (ATS)
+├── Swathisree_Sreepada_CV_ATS_FR.pdf           ← downloadable CV, French (ATS)
+├── Swathisree_Sreepada_CoverLetter_ATS_FR.pdf  ← downloadable cover letter, French (ATS)
 ├── .nojekyll               ← tells GitHub Pages to skip Jekyll processing
 └── README.md               ← this file
 ```
+
+## The two language versions
+
+English lives at `/cv/`, French at `/cv/fr/`, and each page has an `EN`/`FR` chip in
+the nav bar linking to the other. English stays at the root on purpose — both cover
+letters print `swathisree.github.io/cv` as the contact URL, so that address has to keep
+resolving.
+
+Each page is **self-contained with its own inline CSS**, deliberately: if a regenerated
+`index.html` ever overwrites the English page, the French one keeps working. The trade-off
+is that a styling change has to be applied to both files.
+
+The French page's assets are referenced with `../` since it sits one directory down. Its
+text comes from `Swathisree_CV_ATS_FR.pdf`, so if you retranslate the CV, update the page
+to match.
 
 ## Preview it locally first
 
